@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+"""
+@Mariusz Skóra
+"""
+
 import os
 from stat import S_IRWXO
 from time import sleep
