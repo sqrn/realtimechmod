@@ -69,12 +69,16 @@ class RealTimeChmod:
                 self._debug(7, debugText)
                 # change mod of file
                 filepath = "{0}/{1}".format(dirnamepath, filename)
-                print filepath
-                self._changeMod(filepath)
+                #only if the file has not given permissions
+                if self._checkFilePermissions(filepath) is False:
+                    self._changeMod(filepath)
 
     def _changeMod(self, filepath, mode=0777):
         """ Method changes permissions of given filepath"""
         os.chmod(filepath, mode)
+        if self._checkFilePermissions(filepath) is True:
+            debugText = "Permissions of file {0} has been changed".format(filepath)
+            self._debug(5, debugText)
         # @TODO
         # trzeba sprawdzic czy uprawnienia sie zmienily
 
@@ -89,8 +93,14 @@ class RealTimeChmod:
 
         #@TODO has it been changed?
 
-    def _checkFilePermissions(self, filepath, mode=0777):
-        pass
+    def _checkFilePermissions(self, filepath, mode=777):
+        """ Function return True if file has mode=0777 permissions,
+            return False if it has not""" 
+        filemode = oct(os.stat(filepath).st_mode)[4:]
+        if filemode == str(mode):
+            return True
+        else:
+            return False
 
     def _getUserUIDAndGID(self, username):
         import pwd

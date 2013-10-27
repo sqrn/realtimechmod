@@ -18,11 +18,11 @@ directories = (
 # 1 - cron mode (program is executed in specified time (/etc/crontab)) (default)
 # 2 - real time mode (demon)
 
-runningmode = 1
+runningmode = 2
 
 
 def main():
-    rtchm = RealTimeChmod(1)
+    rtchm = RealTimeChmod(runningmode)
     rtchm.run(directories)
     rtchm.sleepseconds = 10
     #rtchm.filesInDirectories(directories)
