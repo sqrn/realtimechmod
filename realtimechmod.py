@@ -98,6 +98,8 @@ class RealTimeChmod:
         return (uid,gid,)
 
     def _debug(self, levelindex, inputtext):
+        #@TODO here should be save to log file also
+        ##TOOD should be log's date and time
         if DEBUG is True:
             if levelindex <= DEBUGLEVEL:
                 debugText = "{0}: {1}".format(levelList[levelindex], inputtext)
