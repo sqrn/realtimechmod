@@ -12,18 +12,6 @@ from time import sleep
 DEBUG = True
 DEBUGLEVEL = 5
 
-"""
-DEBUG MAIN
-0 - Emergency (emerg)
-1 - Alerts (alert)
-2 - Critical (crit)
-3 - Errors (err)
-4 - Warnings (warn)
-5 - Notification (notice)
-6 - Information (info)
-7 - Debug (debug)
-"""
-
 levelList = {
     0 : 'Emergency',
     1 : 'Alerts',
@@ -79,8 +67,6 @@ class RealTimeChmod:
         if self._checkFilePermissions(filepath) is True:
             debugText = "Permissions of file {0} has been changed".format(filepath)
             self._debug(5, debugText)
-        # @TODO
-        # trzeba sprawdzic czy uprawnienia sie zmienily
 
     def _changeOwner(self, filepath, newowner, newgroup):
         """ Method changes owner and group of file, like chmod owner:group"""

@@ -1,10 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""
-TO RUN THIS PROGRAM YOU NEED ROOT PERMISSIONS!
-"""
-
 from realtimechmod import RealTimeChmod
 
 
