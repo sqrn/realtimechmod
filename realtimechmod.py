@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 
 """
-@Mariusz Skóra
+@version: 0.1
+@lastupdate: 2013-10-27
+@author: Mariusz Skóra
 """
 
 import os
